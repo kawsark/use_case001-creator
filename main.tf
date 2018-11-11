@@ -9,7 +9,7 @@ resource "tfe_workspace" "research" {
   working_directory = "research"
 
   vcs_repo = {
-    identifier     = "${var.vcs_identifier}"
+    identifier     = "vincentramirez/project001research"
     oauth_token_id = "${var.oauth_token}"
   }
 }
@@ -20,7 +20,7 @@ resource "tfe_workspace" "test" {
   working_directory = "test"
 
   vcs_repo = {
-    identifier     = "${var.vcs_identifier}"
+    identifier     = "vincentramirez/project001test"
     oauth_token_id = "${var.oauth_token}"
   }
 }
@@ -31,7 +31,7 @@ resource "tfe_workspace" "prod" {
   working_directory = "prod"
 
   vcs_repo = {
-    identifier     = "${var.vcs_identifier}"
+    identifier     = "vincentramirez/project001prod"
     oauth_token_id = "${var.oauth_token}"
   }
 }
@@ -83,21 +83,21 @@ resource "tfe_variable" "prod_aws_secret_key" {
 
 resource "tfe_variable" "workspace_var_research" {
   key      = "workspace_name"
-  value    = "${tfe_workspace.research.id}"
+  value    = "thecreator"
   category = "terraform"
   workspace_id = "${tfe_workspace.research.id}"
 }
 
 resource "tfe_variable" "workspace_var_test" {
   key      = "workspace_name"
-  value    = "${tfe_workspace.test.id}"
+  value    = "thecreator"
   category = "terraform"
   workspace_id = "${tfe_workspace.test.id}"
 }
 
 resource "tfe_variable" "workspace_var_prod" {
   key      = "workspace_name"
-  value    = "${tfe_workspace.prod.id}"
+  value    = "thecreator"
   category = "terraform"
   workspace_id = "${tfe_workspace.prod.id}"
 }
@@ -136,4 +136,5 @@ resource "tfe_variable" "confirm_destroy_test" {
   category     = "env"
   workspace_id = "${tfe_workspace.test.id}"
 }
+
 
