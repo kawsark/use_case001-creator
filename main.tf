@@ -9,7 +9,7 @@ resource "tfe_workspace" "research" {
   working_directory = "research"
 
   vcs_repo = {
-    identifier     = "vincentramirez/project001research"
+    identifier     = "${var.vcs_identifier}"
     oauth_token_id = "${var.oauth_token}"
   }
 }
@@ -20,7 +20,7 @@ resource "tfe_workspace" "test" {
   working_directory = "test"
 
   vcs_repo = {
-    identifier     = "vincentramirez/project001test"
+    identifier     = "${var.vcs_identifier}"
     oauth_token_id = "${var.oauth_token}"
   }
 }
@@ -31,7 +31,7 @@ resource "tfe_workspace" "prod" {
   working_directory = "prod"
 
   vcs_repo = {
-    identifier     = "vincentramirez/project001prod"
+    identifier     = "${var.vcs_identifier}"
     oauth_token_id = "${var.oauth_token}"
   }
 }
