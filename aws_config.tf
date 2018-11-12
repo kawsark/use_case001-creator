@@ -17,7 +17,7 @@ resource "aws_subnet" "research" {
   cidr_block = "10.0.1.0/24"
 
   tags {
-    Name = "research"
+    Name = "${var.use_case_name}-research"
   }
 }
 
@@ -26,7 +26,7 @@ resource "aws_subnet" "test" {
   cidr_block = "10.0.2.0/24"
 
   tags {
-    Name = "test"
+    Name = "${var.use_case_name}-test"
   }
 }
 
@@ -35,6 +35,6 @@ resource "aws_subnet" "prod" {
   cidr_block = "10.0.3.0/24"
 
   tags {
-    Name = "prod"
+    Name = "${var.use_case_name}-prod"
   }
 }
