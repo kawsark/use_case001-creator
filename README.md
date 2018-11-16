@@ -11,7 +11,7 @@ Link this repo to a workspaced in TFE, configure variables, perform a plan/apply
 A HashiCorp TFE account, AWS access/secret keys, basic knowledge of TFE and AWS ...
 
 How to get my TFE OAuth Token:
-https://app.terraform.io/api/v2/organizations/<yourOrgName>/oauth-tokens
+`https://app.terraform.io/api/v2/organizations/<yourOrgName>/oauth-tokens`
 
 ### Insatlling 
 
