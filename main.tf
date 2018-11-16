@@ -40,6 +40,7 @@ resource "tfe_variable" "research_aws_access_key" {
   key          = "AWS_ACCESS_KEY_ID"
   value        = "${var.sub_account_aws_access_key}"
   category     = "env"
+  sensitive    = "true"
   workspace_id = "${tfe_workspace.research.id}"
 }
 
@@ -47,6 +48,7 @@ resource "tfe_variable" "test_aws_access_key" {
   key          = "AWS_ACCESS_KEY_ID"
   value        = "${var.sub_account_aws_access_key}"
   category     = "env"
+  sensitive    = "true"
   workspace_id = "${tfe_workspace.test.id}"
 }
 
@@ -54,6 +56,7 @@ resource "tfe_variable" "prod_aws_access_key" {
   key          = "AWS_ACCESS_KEY_ID"
   value        = "${var.sub_account_aws_access_key}"
   category     = "env"
+  sensitive    = "true"
   workspace_id = "${tfe_workspace.prod.id}"
 }
 
