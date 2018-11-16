@@ -1,3 +1,6 @@
+# This TF config creates a basic VPC and 3 subnets.  These resources can then be consumed by the 3 workspaces  
+# that the creator workspaces creates 
+
 provider "aws" {
   access_key = "${var.master_aws_access_key}"
   secret_key = "${var.master_aws_secret_key}"
