@@ -1,6 +1,6 @@
 provider "tfe" {
   hostname = "${var.hostname}"
-  token    = "${var.token}"
+  token    = "${var.tfe_org_token}"
 }
 
 resource "tfe_workspace" "research" {
@@ -10,7 +10,7 @@ resource "tfe_workspace" "research" {
 
   vcs_repo = {
     identifier     = "${var.vcs_identifier}"
-    oauth_token_id = "${var.oauth_token}"
+    oauth_token_id = "${var.tfe_oauth_token}"
   }
 }
 
@@ -21,7 +21,7 @@ resource "tfe_workspace" "test" {
 
   vcs_repo = {
     identifier     = "${var.vcs_identifier}"
-    oauth_token_id = "${var.oauth_token}"
+    oauth_token_id = "${var.tfe_oauth_token}"
   }
 }
 
@@ -32,7 +32,7 @@ resource "tfe_workspace" "prod" {
 
   vcs_repo = {
     identifier     = "${var.vcs_identifier}"
-    oauth_token_id = "${var.oauth_token}"
+    oauth_token_id = "${var.tfe_oauth_token}"
   }
 }
 
