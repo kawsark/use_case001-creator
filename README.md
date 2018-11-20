@@ -21,6 +21,6 @@ Got to Runs > and Queue Plan to trigger a manual run
 This should result in the creation of 3 workspaces "Research, Test, & Prod" if the names are left unmodified  
 
 ## A few notes on the current TFE provider behavior
-Running this config will create a single workspace in a TFE organization.  If you run a `terraform destroy` it will remove any of the variables populated into the newly created workspace but it will not delete the workspace that was created.  This has to be deleted manually in the GUI, go to Workspaces > choose this workspace > Settings > Queue destroy, accept > the go back to Settings > click Delete from Terraform Enterprise, accept to remove the workspace.
+Running this config will create a single workspace in a TFE organization.  If you run a `terraform destroy` it will remove any of the variables populated into the newly created workspace but it will not delete the workspace that was created.  This has to be deleted manually in the GUI, go to Workspaces > choose this workspace > Settings > Queue destroy, accept > then go back to Settings > click Delete from Terraform Enterprise, accept to remove the workspace.
 
 
