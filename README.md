@@ -4,7 +4,7 @@ This repo provides configs to TFE used to create multiple workspaces in TFE as w
 
 ## Getting Started
 
-Link this repo to a workspaced in TFE, configure variables, perform a plan/apply
+You should have created your own copy of this repo now stored in your Github account as a pre-req from the first steps to this demo.  
 
 ### Prerequisites
 
