@@ -1,6 +1,4 @@
-variable "token" {
-  description = "TFE Org Token"
-}
+variable "tfe_org_token" {}
 
 variable "aws_region" {
   description = "region to deploy resources in"
@@ -15,7 +13,7 @@ variable "hostname" {}
 
 variable "vcs_identifier" {}
 
-variable "oauth_token" {}
+variable "tfe_oauth_token" {}
 
 variable "sub_account_aws_access_key" {}
 
