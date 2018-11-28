@@ -37,7 +37,7 @@ resource "tfe_workspace" "prod" {
 }
 
 resource "tfe_workspace" "staging" {
-  name              = "${var.use_case_name}-prod"
+  name              = "${var.use_case_name}-staging"
   organization      = "${var.org}"
   working_directory = "prod"
 
