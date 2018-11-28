@@ -36,6 +36,17 @@ resource "tfe_workspace" "prod" {
   }
 }
 
+resource "tfe_workspace" "staging" {
+  name              = "${var.use_case_name}-prod"
+  organization      = "${var.org}"
+  working_directory = "prod"
+
+  vcs_repo = {
+    identifier     = "${var.vcs_identifier}"
+    oauth_token_id = "${var.tfe_oauth_token}"
+  }
+}
+
 resource "tfe_variable" "research_aws_access_key" {
   key          = "AWS_ACCESS_KEY_ID"
   value        = "${var.sub_account_aws_access_key}"
