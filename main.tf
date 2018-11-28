@@ -58,7 +58,7 @@ resource "tfe_variable" "research_aws_access_key" {
 resource "tfe_variable" "test_aws_access_key" {
   key          = "AWS_ACCESS_KEY_ID"
 #  value        = "${var.sub_account_aws_access_key}"
-  value = "${data.vault_generic_secret.test_tfe_secret.data["aws_access_key"]}"
+  value = "${data.vault_generic_secret.test_tfe_secret.data["access_key"]}"
   category     = "env"
   sensitive    = "true"
   workspace_id = "${tfe_workspace.test.id}"
@@ -83,7 +83,7 @@ resource "tfe_variable" "research_aws_secret_key" {
 resource "tfe_variable" "test_aws_secret_key" {
   key          = "AWS_SECRET_ACCESS_KEY"
   #value        = "${var.sub_account_aws_secret_key}"
-  value        = "${data.vault_generic_secret.test_tfe_secret.data["aws_secret_key"]}"
+  value        = "${data.vault_generic_secret.test_tfe_secret.data["secret_key"]}"
 
   category     = "env"
   sensitive    = "true"
