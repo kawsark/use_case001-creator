@@ -23,6 +23,11 @@
         },
         {
             "Effect": "Allow",
+            "Action": "iam:GetUser",
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
             "Action": "autoscaling:*",
             "Resource": "*"
         },
