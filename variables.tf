@@ -24,5 +24,9 @@ variable "master_aws_access_key" {}
 variable "master_aws_secret_key" {}
 
 variable "vault_aws_secret_test_path" {
-  default = "aws-tfe/creds/test_tfe_role"
+  default = "aws-test"
+}
+
+variable "vault_aws_secret_test_role" {
+  default = "ec2-admin"
 }

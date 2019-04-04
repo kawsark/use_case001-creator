@@ -36,28 +36,6 @@ resource "tfe_workspace" "prod" {
   }
 }
 
-resource "tfe_workspace" "staging" {
-  name              = "${var.use_case_name}-staging"
-  organization      = "${var.org}"
-  working_directory = "prod"
-
-  vcs_repo = {
-    identifier     = "${var.vcs_identifier}"
-    oauth_token_id = "${var.tfe_oauth_token}"
-  }
-}
-
-resource "tfe_workspace" "test02" {
-  name              = "${var.use_case_name}-test02"
-  organization      = "${var.org}"
-  working_directory = "prod"
-
-  vcs_repo = {
-    identifier     = "${var.vcs_identifier}"
-    oauth_token_id = "${var.tfe_oauth_token}"
-  }
-}
-
 resource "tfe_variable" "research_aws_access_key" {
   key          = "AWS_ACCESS_KEY_ID"
   value        = "${var.sub_account_aws_access_key}"
@@ -68,8 +46,7 @@ resource "tfe_variable" "research_aws_access_key" {
 
 resource "tfe_variable" "test_aws_access_key" {
   key          = "AWS_ACCESS_KEY_ID"
-#  value        = "${var.sub_account_aws_access_key}"
-  value = "${data.vault_generic_secret.test_tfe_secret.data["access_key"]}"
+  value = "${data.vault_aws_access_credentials.aws_creds_test.access_key}"
   category     = "env"
   sensitive    = "true"
   workspace_id = "${tfe_workspace.test.id}"
@@ -93,9 +70,7 @@ resource "tfe_variable" "research_aws_secret_key" {
 
 resource "tfe_variable" "test_aws_secret_key" {
   key          = "AWS_SECRET_ACCESS_KEY"
-  #value        = "${var.sub_account_aws_secret_key}"
-  value        = "${data.vault_generic_secret.test_tfe_secret.data["secret_key"]}"
-
+  value = "${data.vault_aws_access_credentials.aws_creds_test.secret_key}"
   category     = "env"
   sensitive    = "true"
   workspace_id = "${tfe_workspace.test.id}"
